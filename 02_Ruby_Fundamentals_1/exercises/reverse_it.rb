@@ -1,28 +1,33 @@
 #storing the word that we are testing in a variable
-str = "test"
+word = "test"
 #storing the original word in a seperate variable so we can use it to compare at the end
-stringtocompare = str
+string_to_compare = word
+#converts the string to an array of characters
+array_word = word.chars.to_a 
 #tells where to start the while loop
 counter = 0
-#empty string to store popped letters into a string for the final word
-result = " "
+#empty array to store popped letters in for the final word
+result = []
 
 #while loop goes while the total number of letters in the string is less than the string length
-while counter < str.length
+while counter < array_word.length
 #popping the last letter off of the string and saving it in a variable
-  popletter = string.pop
+  popletter = array_word.pop
 #putting the popped letters into the empty string with the
   result = result + popletter
 #Increase by 1 every time we do the process
   counter = counter + 1
 end
 
+#once we have reversed the word, this converts the array back to a string
+final_string = result.to_s
+
 #Once the loop ends, if res is equal to the stringtocompare (original string) return true - it is a palindrome.
-If res == stringtocompare
-  return true
+If final_string == string_to_compare
+  puts true
 #otherwise, return false
 else
-  return false
+  puts false
 end
 
 
